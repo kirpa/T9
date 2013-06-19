@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DDFEB85F17727C0100740D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB85E17727C0100740D16 /* UIKit.framework */; };
+		DDFEB86117727C0100740D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86017727C0100740D16 /* Foundation.framework */; };
+		DDFEB86317727C0100740D16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86217727C0100740D16 /* CoreGraphics.framework */; };
+		DDFEB86917727C0100740D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB86717727C0100740D16 /* InfoPlist.strings */; };
+		DDFEB86B17727C0100740D16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB86A17727C0100740D16 /* main.m */; };
+		DDFEB86F17727C0100740D16 /* T9AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB86E17727C0100740D16 /* T9AppDelegate.m */; };
+		DDFEB87117727C0100740D16 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB87017727C0100740D16 /* Default.png */; };
+		DDFEB87317727C0100740D16 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB87217727C0100740D16 /* Default@2x.png */; };
+		DDFEB87517727C0100740D16 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB87417727C0100740D16 /* Default-568h@2x.png */; };
+		DDFEB87817727C0100740D16 /* T9ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB87717727C0100740D16 /* T9ViewController.m */; };
+		DDFEB87B17727C0100740D16 /* T9ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB87917727C0100740D16 /* T9ViewController.xib */; };
+		DDFEB88317727C0100740D16 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB88217727C0100740D16 /* SenTestingKit.framework */; };
+		DDFEB88417727C0100740D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB85E17727C0100740D16 /* UIKit.framework */; };
+		DDFEB88517727C0100740D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86017727C0100740D16 /* Foundation.framework */; };
+		DDFEB88D17727C0100740D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB88B17727C0100740D16 /* InfoPlist.strings */; };
+		DDFEB89017727C0100740D16 /* T9Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB88F17727C0100740D16 /* T9Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DDFEB88617727C0100740D16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDFEB85317727C0100740D16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDFEB85A17727C0100740D16;
+			remoteInfo = T9;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DDFEB85B17727C0100740D16 /* T9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T9.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFEB85E17727C0100740D16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DDFEB86017727C0100740D16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DDFEB86217727C0100740D16 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DDFEB86617727C0100740D16 /* T9-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T9-Info.plist"; sourceTree = "<group>"; };
+		DDFEB86817727C0100740D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDFEB86A17727C0100740D16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DDFEB86C17727C0100740D16 /* T9-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "T9-Prefix.pch"; sourceTree = "<group>"; };
+		DDFEB86D17727C0100740D16 /* T9AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9AppDelegate.h; sourceTree = "<group>"; };
+		DDFEB86E17727C0100740D16 /* T9AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9AppDelegate.m; sourceTree = "<group>"; };
+		DDFEB87017727C0100740D16 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		DDFEB87217727C0100740D16 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		DDFEB87417727C0100740D16 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DDFEB87617727C0100740D16 /* T9ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9ViewController.h; sourceTree = "<group>"; };
+		DDFEB87717727C0100740D16 /* T9ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9ViewController.m; sourceTree = "<group>"; };
+		DDFEB87A17727C0100740D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/T9ViewController.xib; sourceTree = "<group>"; };
+		DDFEB88117727C0100740D16 /* T9Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = T9Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDFEB88217727C0100740D16 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DDFEB88A17727C0100740D16 /* T9Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T9Tests-Info.plist"; sourceTree = "<group>"; };
+		DDFEB88C17727C0100740D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DDFEB88E17727C0100740D16 /* T9Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9Tests.h; sourceTree = "<group>"; };
+		DDFEB88F17727C0100740D16 /* T9Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DDFEB85817727C0100740D16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB85F17727C0100740D16 /* UIKit.framework in Frameworks */,
+				DDFEB86117727C0100740D16 /* Foundation.framework in Frameworks */,
+				DDFEB86317727C0100740D16 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFEB87D17727C0100740D16 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB88317727C0100740D16 /* SenTestingKit.framework in Frameworks */,
+				DDFEB88417727C0100740D16 /* UIKit.framework in Frameworks */,
+				DDFEB88517727C0100740D16 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DDFEB85217727C0100740D16 = {
+			isa = PBXGroup;
+			children = (
+				DDFEB86417727C0100740D16 /* T9 */,
+				DDFEB88817727C0100740D16 /* T9Tests */,
+				DDFEB85D17727C0100740D16 /* Frameworks */,
+				DDFEB85C17727C0100740D16 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DDFEB85C17727C0100740D16 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB85B17727C0100740D16 /* T9.app */,
+				DDFEB88117727C0100740D16 /* T9Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DDFEB85D17727C0100740D16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB85E17727C0100740D16 /* UIKit.framework */,
+				DDFEB86017727C0100740D16 /* Foundation.framework */,
+				DDFEB86217727C0100740D16 /* CoreGraphics.framework */,
+				DDFEB88217727C0100740D16 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DDFEB86417727C0100740D16 /* T9 */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB86D17727C0100740D16 /* T9AppDelegate.h */,
+				DDFEB86E17727C0100740D16 /* T9AppDelegate.m */,
+				DDFEB87617727C0100740D16 /* T9ViewController.h */,
+				DDFEB87717727C0100740D16 /* T9ViewController.m */,
+				DDFEB87917727C0100740D16 /* T9ViewController.xib */,
+				DDFEB86517727C0100740D16 /* Supporting Files */,
+			);
+			path = T9;
+			sourceTree = "<group>";
+		};
+		DDFEB86517727C0100740D16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB86617727C0100740D16 /* T9-Info.plist */,
+				DDFEB86717727C0100740D16 /* InfoPlist.strings */,
+				DDFEB86A17727C0100740D16 /* main.m */,
+				DDFEB86C17727C0100740D16 /* T9-Prefix.pch */,
+				DDFEB87017727C0100740D16 /* Default.png */,
+				DDFEB87217727C0100740D16 /* Default@2x.png */,
+				DDFEB87417727C0100740D16 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDFEB88817727C0100740D16 /* T9Tests */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB88E17727C0100740D16 /* T9Tests.h */,
+				DDFEB88F17727C0100740D16 /* T9Tests.m */,
+				DDFEB88917727C0100740D16 /* Supporting Files */,
+			);
+			path = T9Tests;
+			sourceTree = "<group>";
+		};
+		DDFEB88917727C0100740D16 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DDFEB88A17727C0100740D16 /* T9Tests-Info.plist */,
+				DDFEB88B17727C0100740D16 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DDFEB85A17727C0100740D16 /* T9 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFEB89317727C0100740D16 /* Build configuration list for PBXNativeTarget "T9" */;
+			buildPhases = (
+				DDFEB85717727C0100740D16 /* Sources */,
+				DDFEB85817727C0100740D16 /* Frameworks */,
+				DDFEB85917727C0100740D16 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = T9;
+			productName = T9;
+			productReference = DDFEB85B17727C0100740D16 /* T9.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DDFEB88017727C0100740D16 /* T9Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDFEB89617727C0100740D16 /* Build configuration list for PBXNativeTarget "T9Tests" */;
+			buildPhases = (
+				DDFEB87C17727C0100740D16 /* Sources */,
+				DDFEB87D17727C0100740D16 /* Frameworks */,
+				DDFEB87E17727C0100740D16 /* Resources */,
+				DDFEB87F17727C0100740D16 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDFEB88717727C0100740D16 /* PBXTargetDependency */,
+			);
+			name = T9Tests;
+			productName = T9Tests;
+			productReference = DDFEB88117727C0100740D16 /* T9Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DDFEB85317727C0100740D16 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = T9;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Vadim;
+			};
+			buildConfigurationList = DDFEB85617727C0100740D16 /* Build configuration list for PBXProject "T9" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DDFEB85217727C0100740D16;
+			productRefGroup = DDFEB85C17727C0100740D16 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DDFEB85A17727C0100740D16 /* T9 */,
+				DDFEB88017727C0100740D16 /* T9Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DDFEB85917727C0100740D16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB86917727C0100740D16 /* InfoPlist.strings in Resources */,
+				DDFEB87117727C0100740D16 /* Default.png in Resources */,
+				DDFEB87317727C0100740D16 /* Default@2x.png in Resources */,
+				DDFEB87517727C0100740D16 /* Default-568h@2x.png in Resources */,
+				DDFEB87B17727C0100740D16 /* T9ViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFEB87E17727C0100740D16 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB88D17727C0100740D16 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DDFEB87F17727C0100740D16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DDFEB85717727C0100740D16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB86B17727C0100740D16 /* main.m in Sources */,
+				DDFEB86F17727C0100740D16 /* T9AppDelegate.m in Sources */,
+				DDFEB87817727C0100740D16 /* T9ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDFEB87C17727C0100740D16 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDFEB89017727C0100740D16 /* T9Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DDFEB88717727C0100740D16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDFEB85A17727C0100740D16 /* T9 */;
+			targetProxy = DDFEB88617727C0100740D16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DDFEB86717727C0100740D16 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFEB86817727C0100740D16 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DDFEB87917727C0100740D16 /* T9ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFEB87A17727C0100740D16 /* en */,
+			);
+			name = T9ViewController.xib;
+			sourceTree = "<group>";
+		};
+		DDFEB88B17727C0100740D16 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DDFEB88C17727C0100740D16 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DDFEB89117727C0100740D16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DDFEB89217727C0100740D16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DDFEB89417727C0100740D16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
+				INFOPLIST_FILE = "T9/T9-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DDFEB89517727C0100740D16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
+				INFOPLIST_FILE = "T9/T9-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DDFEB89717727C0100740D16 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/T9.app/T9";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
+				INFOPLIST_FILE = "T9Tests/T9Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DDFEB89817727C0100740D16 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/T9.app/T9";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
+				INFOPLIST_FILE = "T9Tests/T9Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DDFEB85617727C0100740D16 /* Build configuration list for PBXProject "T9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFEB89117727C0100740D16 /* Debug */,
+				DDFEB89217727C0100740D16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DDFEB89317727C0100740D16 /* Build configuration list for PBXNativeTarget "T9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFEB89417727C0100740D16 /* Debug */,
+				DDFEB89517727C0100740D16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DDFEB89617727C0100740D16 /* Build configuration list for PBXNativeTarget "T9Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDFEB89717727C0100740D16 /* Debug */,
+				DDFEB89817727C0100740D16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DDFEB85317727C0100740D16 /* Project object */;
+}

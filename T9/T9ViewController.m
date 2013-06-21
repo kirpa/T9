@@ -39,7 +39,7 @@
 
 - (void) updateResultForDigits:(NSString *) digits
 {
-    if ([digits length] > 0)
+//    if ([digits length] > 0)
     {
         NSArray *words = [_dictionary wordsForDigits:digits];
         NSLog(@"words are: %@", words);
@@ -90,9 +90,7 @@
 {
     [_fadeView removeFromSuperview];
     [_activityIndicator stopAnimating];
-    [_activityIndicator release];
     _activityIndicator = nil;
-    [_fadeView release];
     _fadeView = nil;
 }
 
@@ -111,7 +109,7 @@
 {
     [super viewDidLoad];
 	NSCharacterSet *allowedCharacters = [NSCharacterSet characterSetWithCharactersInString:@"23456789"];
-    _disallowedCharacters = [[allowedCharacters invertedSet] retain];
+    _disallowedCharacters = [allowedCharacters invertedSet];
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,9 +121,6 @@
 - (void) dealloc
 {
     [self removeFade];
-    [_disallowedCharacters release];
-    [_dictionary release];
-    [super dealloc];
 }
 
 @end

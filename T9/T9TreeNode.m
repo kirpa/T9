@@ -68,7 +68,7 @@ static int instanceCount = 0;
 
 - (void) addSubnode:(T9TreeNode *) node forType:(NumberCharsType) type
 {
-    _subnodes[type] = [node retain];
+    _subnodes[type] = node;
     node.parentNode = self;
 }
 
@@ -107,9 +107,6 @@ static int instanceCount = 0;
 - (void) dealloc
 {
     instanceCount--;
-    for (int i = 0; i < nctTotalNums; i++)
-        [_subnodes[i] release];
-    [super dealloc];
 }
 
 @end

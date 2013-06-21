@@ -398,7 +398,7 @@
 		DDFEB89417727C0100740D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
 				INFOPLIST_FILE = "T9/T9-Info.plist";
@@ -411,7 +411,7 @@
 		DDFEB89517727C0100740D16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
 				INFOPLIST_FILE = "T9/T9-Info.plist";

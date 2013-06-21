@@ -44,11 +44,11 @@ const int cMaxSearchResults = 3;
         
     while (offset < [wordStart length])
     {
+        index += matchedWords;
         const unichar *allowedChars = [T9TreeNode getCharsForDigit:[wordStart characterAtIndex:offset] - '0'];
         matchedWords = [self getWordCountForCharacters:allowedChars atOffset:offset fromIndex:index];
         if (matchedWords > 0)
         {
-            index += matchedWords;
             offset++;
         }
         else
@@ -60,7 +60,6 @@ const int cMaxSearchResults = 3;
         NSRange range;
         range.location = index;
         range.length = MIN (matchedWords, cMaxSearchResults);
-        NSLog(@"found words: %@, range: %@", [_dictionary subarrayWithRange:range], NSStringFromRange(range));
         return [_dictionary subarrayWithRange:range];
     }
     else
@@ -119,7 +118,6 @@ const int cMaxSearchResults = 3;
         // node is empty, creating new one
         nextNode = [[T9TreeNode alloc] initWithType:nextNodeType];
         [parent addSubnode:nextNode forType:nextNodeType];
-        [nextNode release];
     }
     [nextNode setIndex:index forCharacter:character];
     return nextNode;
@@ -230,9 +228,6 @@ const int cMaxSearchResults = 3;
 
 - (void) dealloc
 {
-    [_dictionary release];
-    [_rootNode release];
-    [super dealloc];
 }
 
 @end

@@ -109,25 +109,39 @@ const int cMaxSearchResults = 3;
     return [self searchWordsStartingWith:digits withOffset:scannedDepth - 1 fromIndex:startIndex];
 }
 
-- (T9TreeNode *) getNodeForParent:(T9TreeNode *) parent forChar:(unichar) character withIndex:(int) index
+- (T9TreeNode *) createNodeForChar:(unichar) character withIndex:(int) index
 {
     NumberCharsType nextNodeType = [T9TreeNode getTypeForChar:character];
-    T9TreeNode *nextNode = [parent subnodeForType:nextNodeType];
-    if (!nextNode)
+    T9TreeNode *result = [[T9TreeNode alloc] initWithType:nextNodeType];
+    [result setIndex:index forCharacter:character];
+    return result;
+}
+
+- (T9TreeNode *) getNodeForDigits:(NSString *) digits withIndex:(int) index
+{
+    T9TreeNode *node = _rootNode;
+    for (int i = 0; i < [digits length]; i++)
     {
-        // node is empty, creating new one
-        nextNode = [[T9TreeNode alloc] initWithType:nextNodeType];
-        [parent addSubnode:nextNode forType:nextNodeType];
+        unichar character = [digits characterAtIndex:i];
+        NumberCharsType nextNodeType = [T9TreeNode getTypeForChar:character];
+        node = [node subnodeForType:nextNodeType];
+        if (!node)
+        {
+            T9TreeNode *newNode = [self createNodeForChar:character withIndex:index];
+            [newNode setIndex:index forCharacter:character];
+            [node addSubnode:newNode forType:nextNodeType];
+            node = newNode;
+        }
     }
-    [nextNode setIndex:index forCharacter:character];
-    return nextNode;
+    
+    return node;
 }
 
 - (void) buildIndexTreeForVocabulary
 {
     T9TreeNode *currentNode = _rootNode = [[T9TreeNode alloc] initWithType:nctZero];
     int currentDepth = -1;
-    unichar currentPreffix[cTreeDepth] = {'a', 'a', 'a', 'a'};
+    NSString *currentPreffix;
     for (int i=0; i < [_dictionary count]; i++)
     {
         NSString *word = [_dictionary objectAtIndex:i];
@@ -136,16 +150,13 @@ const int cMaxSearchResults = 3;
         {
             // need to go deeper in index tree and create child for current node
             currentDepth++;
-            unichar character = [word characterAtIndex:currentDepth];
-            currentNode = [self getNodeForParent:currentNode forChar:character withIndex:i];
             while (currentDepth < cTreeDepth - 1 && lastCharIndex > currentDepth)
             {
                 // might need to repeat it if the first word in new index range is even longer
                 currentDepth++;
-                character = [word characterAtIndex:currentDepth];
-                currentNode = [self getNodeForParent:currentNode forChar:character withIndex:i];
             }
-            currentPreffix[currentDepth] = character;
+            currentPreffix = [word substringToIndex:currentDepth];
+            currentNode = [self getNodeForDigits:currentPreffix withIndex:i];
             // skipping rest of the code
             continue;
         }
@@ -155,44 +166,25 @@ const int cMaxSearchResults = 3;
             while (lastCharIndex < currentDepth)
             {
                 currentDepth--;
-                currentNode = currentNode.parentNode;
             }
-            currentPreffix[currentDepth] = [word characterAtIndex:currentDepth];
+            currentPreffix = [word substringToIndex:currentDepth];
+            currentNode = [self getNodeForDigits:currentPreffix withIndex:i];
         }
                
         // String length is ok and we're at maximum depth level for current word.
         // Checking if we've left current character bounds if not - do nothing, index is already saved before
         
-        unichar character = [word characterAtIndex:currentDepth];
-        if (character != currentPreffix[currentDepth])
+        if (![word hasPrefix:currentPreffix])
         {
             // we've left current character bounds. Trying to save index for next character in current node
-            
+            currentPreffix = [word substringToIndex:currentDepth];
+            unichar character = [word characterAtIndex:currentDepth];
             if (![currentNode setIndex:i forCharacter:character])
             {
-                // we've left current node bounds too. Need to create sibling for current node
-                // or go up a level. Or few levels, creating a loop for cuch a case
-                BOOL run = YES;
-                while (run)
-                {
-                    run = NO;
-                    if (currentDepth == 0 || character == currentPreffix[currentDepth - 1])
-                    {
-                        //we're either at top level, or previous node is still ok, creating sibling
-                        currentPreffix[currentDepth] = character;                           
-                        currentNode = [self getNodeForParent:currentNode.parentNode forChar:character withIndex:i];
-                    }
-                    else
-                    {
-                        //go up for a level, repeating
-                        currentDepth--;
-                        currentNode = currentNode.parentNode;
-                        run = YES;
-                    }
-                }
+                // we've left current node bounds too. Need to create new node
+                currentNode = [self getNodeForDigits:currentPreffix withIndex:i];
             }
-            currentPreffix[currentDepth] = character;
-        }        
+        }
     }
 }
 

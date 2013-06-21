@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDA612301773061B00923742 /* T9TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6122F1773061B00923742 /* T9TreeNode.m */; };
+		DDFA80FB1774BECA00BA275C /* wordsEn.txt in Resources */ = {isa = PBXBuildFile; fileRef = DDFA80FA1774BECA00BA275C /* wordsEn.txt */; };
 		DDFEB85F17727C0100740D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB85E17727C0100740D16 /* UIKit.framework */; };
 		DDFEB86117727C0100740D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86017727C0100740D16 /* Foundation.framework */; };
 		DDFEB86317727C0100740D16 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86217727C0100740D16 /* CoreGraphics.framework */; };
@@ -23,6 +25,7 @@
 		DDFEB88517727C0100740D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86017727C0100740D16 /* Foundation.framework */; };
 		DDFEB88D17727C0100740D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB88B17727C0100740D16 /* InfoPlist.strings */; };
 		DDFEB89017727C0100740D16 /* T9Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB88F17727C0100740D16 /* T9Tests.m */; };
+		DDFEB89B17727C5A00740D16 /* T9Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB89A17727C5A00740D16 /* T9Dictionary.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DDA6122E1773061B00923742 /* T9TreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T9TreeNode.h; sourceTree = "<group>"; };
+		DDA6122F1773061B00923742 /* T9TreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T9TreeNode.m; sourceTree = "<group>"; };
+		DDFA80FA1774BECA00BA275C /* wordsEn.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wordsEn.txt; sourceTree = "<group>"; };
 		DDFEB85B17727C0100740D16 /* T9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = T9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFEB85E17727C0100740D16 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDFEB86017727C0100740D16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +64,8 @@
 		DDFEB88C17727C0100740D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDFEB88E17727C0100740D16 /* T9Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9Tests.h; sourceTree = "<group>"; };
 		DDFEB88F17727C0100740D16 /* T9Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9Tests.m; sourceTree = "<group>"; };
+		DDFEB89917727C5A00740D16 /* T9Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T9Dictionary.h; sourceTree = "<group>"; };
+		DDFEB89A17727C5A00740D16 /* T9Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T9Dictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,10 @@
 				DDFEB86E17727C0100740D16 /* T9AppDelegate.m */,
 				DDFEB87617727C0100740D16 /* T9ViewController.h */,
 				DDFEB87717727C0100740D16 /* T9ViewController.m */,
+				DDFEB89917727C5A00740D16 /* T9Dictionary.h */,
+				DDFEB89A17727C5A00740D16 /* T9Dictionary.m */,
+				DDA6122E1773061B00923742 /* T9TreeNode.h */,
+				DDA6122F1773061B00923742 /* T9TreeNode.m */,
 				DDFEB87917727C0100740D16 /* T9ViewController.xib */,
 				DDFEB86517727C0100740D16 /* Supporting Files */,
 			);
@@ -130,6 +142,7 @@
 		DDFEB86517727C0100740D16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DDFA80FA1774BECA00BA275C /* wordsEn.txt */,
 				DDFEB86617727C0100740D16 /* T9-Info.plist */,
 				DDFEB86717727C0100740D16 /* InfoPlist.strings */,
 				DDFEB86A17727C0100740D16 /* main.m */,
@@ -237,6 +250,7 @@
 				DDFEB87317727C0100740D16 /* Default@2x.png in Resources */,
 				DDFEB87517727C0100740D16 /* Default-568h@2x.png in Resources */,
 				DDFEB87B17727C0100740D16 /* T9ViewController.xib in Resources */,
+				DDFA80FB1774BECA00BA275C /* wordsEn.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +288,8 @@
 				DDFEB86B17727C0100740D16 /* main.m in Sources */,
 				DDFEB86F17727C0100740D16 /* T9AppDelegate.m in Sources */,
 				DDFEB87817727C0100740D16 /* T9ViewController.m in Sources */,
+				DDFEB89B17727C5A00740D16 /* T9Dictionary.m in Sources */,
+				DDA612301773061B00923742 /* T9TreeNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +398,11 @@
 		DDFEB89417727C0100740D16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
 				INFOPLIST_FILE = "T9/T9-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -393,9 +411,11 @@
 		DDFEB89517727C0100740D16 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "T9/T9-Prefix.pch";
 				INFOPLIST_FILE = "T9/T9-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,6 +474,7 @@
 				DDFEB89517727C0100740D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DDFEB89617727C0100740D16 /* Build configuration list for PBXNativeTarget "T9Tests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +483,7 @@
 				DDFEB89817727C0100740D16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

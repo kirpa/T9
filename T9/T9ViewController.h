@@ -1,13 +1,9 @@
-//
-//  T9ViewController.h
-//  T9
-//
-//  Created by Vadim on 6/20/13.
-//  Copyright (c) 2013 Vadim. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
-@interface T9ViewController : UIViewController
+@interface T9ViewController : UIViewController <UITextFieldDelegate>
+
+@property (retain, nonatomic) IBOutlet UILabel *outputLabel;
+
+- (IBAction) editingChanged:(id)sender;
 
 @end

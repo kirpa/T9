@@ -6,6 +6,9 @@
 {
     NSArray     *_dictionary;
     T9TreeNode  *_rootNode;
+    NSString    *_prevoiusDigits;    
+    int         _previousIndex;
+    
 }
 
 @property (retain, nonatomic) NSArray *dictionary;

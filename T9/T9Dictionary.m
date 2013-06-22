@@ -10,57 +10,148 @@ const int cMaxSearchResults = 3;
 
 #pragma mark Utility methods
 
-- (int) getWordCountForCharacters:(const unichar *) characters atOffset:(int) offset fromIndex:(int) index
+- (BOOL) canUsePreviousPreffixFor:(NSString *) currentDigits
 {
-    int foundWords = 0;
-    while (index < [_dictionary count])
+    if (!_prevoiusDigits)
+        return NO;
+    
+    if ([currentDigits length] > [_prevoiusDigits length])
+    {
+        return [currentDigits hasPrefix:_prevoiusDigits];
+    }
+    else
+    {
+        return NO;
+    }
+    
+}
+
+- (int) getLastPossibleWordForCharacters:(const unichar *) characters atOffset:(int) offset from:(int) index
+{
+    return [_dictionary count] - 1;
+    
+//  TODO: optimize range end
+    
+    for (int i = index; i < [_dictionary count]; i++)
+    {
+        NSString *word = [_dictionary objectAtIndex:i];
+        if ([word length] <= offset)
+            return i;
+        
+        unichar charAtOffset = [word characterAtIndex:offset];
+        BOOL match = NO;
+        for (int j = 0; j < cMaxCharsForDigit; j++)
+        {
+            if (charAtOffset == characters[j])
+            {
+                match = YES;
+                break;
+            }
+        }
+        if (!match)
+        {
+            return i;
+        }
+    }
+    return [_dictionary count] - 1;
+}
+
+- (int) getFirstWordForCharacters:(const unichar *) characters atOffset:(int) offset inRange:(int) start ending:(int) end
+{
+    for (int index = start; index <= end; index++)
     {
         NSString *word = [_dictionary objectAtIndex:index];
         if ([word length] <= offset)
-            break;
-        
+            continue;
         unichar charAtOffset = [word characterAtIndex:offset];
-        BOOL matched = NO;
         for (int i = 0; i < cMaxCharsForDigit; i++)
         {
             if (charAtOffset == characters[i])
             {
-                matched = YES;
-                foundWords++;
-                index++;
-                break;
+                return index;
             }
         }
-        if (!matched)
-            break;
     }
-    return foundWords;
+    
+    return cUnsetIndex;
+}
+
+- (NSArray *) getMatchingWordsForDigits:(NSString *) wordStart inRangeStart:(int) start end:(int) end
+{
+    NSMutableArray *array = [NSMutableArray array];
+    int preffixLastChar = [wordStart length] - 1;
+    for (int i = start; i <= end; i++)
+    {
+        if ([array count] == cMaxSearchResults)
+            break;
+        
+        NSString *word = [_dictionary objectAtIndex:i];
+        int lastChar = [word length] - 1;
+        int offset = 0;
+        BOOL run = YES;
+        while (run)
+        {
+            unichar charAtOffset = [word characterAtIndex:offset];
+            const unichar *allowedChars = [T9TreeNode getCharsForDigit:[wordStart characterAtIndex:offset] - '0'];
+            BOOL match = NO;
+            for (int j = 0; j < cMaxCharsForDigit; j++)
+            {
+                if (charAtOffset == allowedChars[j])
+                {
+                    match = YES;
+                    break;
+                }
+            }
+            
+            if (match && offset < lastChar && offset < preffixLastChar)
+            {
+                offset++;
+            }
+            else
+            {
+                run = NO;
+            }
+            
+        }
+        
+        if (offset == preffixLastChar)
+            [array addObject:word];
+    }
+    
+    return array;
 }
 
 - (NSArray *) searchWordsStartingWith:(NSString *) wordStart withOffset:(int) offset fromIndex:(int) index
 {
-    int matchedWords = 0;
     NSLog(@"search digits, offset, index: %@, %d %d", wordStart, offset, index);
-        
+    if (offset >= [wordStart length])
+        return nil;
+    
+    BOOL wordFound;
+    const unichar *allowedChars = [T9TreeNode getCharsForDigit:[wordStart characterAtIndex:offset] - '0'];
+    int rangeEnd = [self getLastPossibleWordForCharacters:allowedChars atOffset:offset from:index];
     while (offset < [wordStart length])
     {
-        index += matchedWords;
-        const unichar *allowedChars = [T9TreeNode getCharsForDigit:[wordStart characterAtIndex:offset] - '0'];
-        matchedWords = [self getWordCountForCharacters:allowedChars atOffset:offset fromIndex:index];
-        if (matchedWords > 0)
+        allowedChars = [T9TreeNode getCharsForDigit:[wordStart characterAtIndex:offset] - '0'];
+        int wordOffset = [self getFirstWordForCharacters:allowedChars atOffset:offset inRange:index ending:rangeEnd];
+        if (wordOffset != cUnsetIndex )
         {
+            index = wordOffset;
             offset++;
+            wordFound = YES;
         }
         else
+        {
+            wordFound = NO;
             break;
+        }
     }
     
-    if (matchedWords > 0)
+    if (wordFound)
     {
-        NSRange range;
-        range.location = index;
-        range.length = MIN (matchedWords, cMaxSearchResults);
-        return [_dictionary subarrayWithRange:range];
+        _previousIndex = index;
+        _prevoiusDigits = wordStart;
+        return [self getMatchingWordsForDigits:wordStart inRangeStart:index end:rangeEnd];
     }
     else
         return nil;
@@ -75,7 +166,6 @@ const int cMaxSearchResults = 3;
     for (scannedDepth = 0; scannedDepth < length; scannedDepth++)
     {
         int digit = [digits characterAtIndex:scannedDepth] - '0';
-        NSLog(@"digi value is: %d", digit);
         T9TreeNode *nextNode = [node subnodeForType:digit];
         if (nextNode)
         {
@@ -97,7 +187,19 @@ const int cMaxSearchResults = 3;
     int startIndex = cUnsetIndex;
     for (int i = cMaxCharsForDigit - 1; i >= 0; i--)
         if (node.indices[i] != cUnsetIndex)
+        {
             startIndex = node.indices[i];
+            if ([self canUsePreviousPreffixFor:digits] &&
+                startIndex < _previousIndex)
+            {
+                NSLog(@"can use prev");
+                startIndex = _previousIndex;
+            }
+            else
+            {
+                NSLog(@"no use prev");
+            }
+        }
     
     if (startIndex == cUnsetIndex)
     {
@@ -124,14 +226,14 @@ const int cMaxSearchResults = 3;
     {
         unichar character = [digits characterAtIndex:i];
         NumberCharsType nextNodeType = [T9TreeNode getTypeForChar:character];
-        node = [node subnodeForType:nextNodeType];
-        if (!node)
+        T9TreeNode *newNode = [node subnodeForType:nextNodeType];
+        if (!newNode)
         {
-            T9TreeNode *newNode = [self createNodeForChar:character withIndex:index];
+            newNode = [self createNodeForChar:character withIndex:index];
             [newNode setIndex:index forCharacter:character];
             [node addSubnode:newNode forType:nextNodeType];
-            node = newNode;
         }
+        node = newNode;
     }
     
     return node;
@@ -155,7 +257,7 @@ const int cMaxSearchResults = 3;
                 // might need to repeat it if the first word in new index range is even longer
                 currentDepth++;
             }
-            currentPreffix = [word substringToIndex:currentDepth];
+            currentPreffix = [word substringToIndex:currentDepth + 1];
             currentNode = [self getNodeForDigits:currentPreffix withIndex:i];
             // skipping rest of the code
             continue;
@@ -167,7 +269,7 @@ const int cMaxSearchResults = 3;
             {
                 currentDepth--;
             }
-            currentPreffix = [word substringToIndex:currentDepth];
+            currentPreffix = [word substringToIndex:currentDepth + 1];
             currentNode = [self getNodeForDigits:currentPreffix withIndex:i];
         }
                
@@ -177,7 +279,7 @@ const int cMaxSearchResults = 3;
         if (![word hasPrefix:currentPreffix])
         {
             // we've left current character bounds. Trying to save index for next character in current node
-            currentPreffix = [word substringToIndex:currentDepth];
+            currentPreffix = [word substringToIndex:currentDepth + 1];
             unichar character = [word characterAtIndex:currentDepth];
             if (![currentNode setIndex:i forCharacter:character])
             {

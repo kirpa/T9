@@ -24,7 +24,7 @@
 		DDFEB88417727C0100740D16 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB85E17727C0100740D16 /* UIKit.framework */; };
 		DDFEB88517727C0100740D16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFEB86017727C0100740D16 /* Foundation.framework */; };
 		DDFEB88D17727C0100740D16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DDFEB88B17727C0100740D16 /* InfoPlist.strings */; };
-		DDFEB89017727C0100740D16 /* T9Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB88F17727C0100740D16 /* T9Tests.m */; };
+		DDFEB89017727C0100740D16 /* T9TreeNodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB88F17727C0100740D16 /* T9TreeNodeTests.m */; };
 		DDFEB89B17727C5A00740D16 /* T9Dictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEB89A17727C5A00740D16 /* T9Dictionary.m */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +62,8 @@
 		DDFEB88217727C0100740D16 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		DDFEB88A17727C0100740D16 /* T9Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "T9Tests-Info.plist"; sourceTree = "<group>"; };
 		DDFEB88C17727C0100740D16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DDFEB88E17727C0100740D16 /* T9Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9Tests.h; sourceTree = "<group>"; };
-		DDFEB88F17727C0100740D16 /* T9Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9Tests.m; sourceTree = "<group>"; };
+		DDFEB88E17727C0100740D16 /* T9TreeNodeTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T9TreeNodeTests.h; sourceTree = "<group>"; };
+		DDFEB88F17727C0100740D16 /* T9TreeNodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T9TreeNodeTests.m; sourceTree = "<group>"; };
 		DDFEB89917727C5A00740D16 /* T9Dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T9Dictionary.h; sourceTree = "<group>"; };
 		DDFEB89A17727C5A00740D16 /* T9Dictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T9Dictionary.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,8 +157,8 @@
 		DDFEB88817727C0100740D16 /* T9Tests */ = {
 			isa = PBXGroup;
 			children = (
-				DDFEB88E17727C0100740D16 /* T9Tests.h */,
-				DDFEB88F17727C0100740D16 /* T9Tests.m */,
+				DDFEB88E17727C0100740D16 /* T9TreeNodeTests.h */,
+				DDFEB88F17727C0100740D16 /* T9TreeNodeTests.m */,
 				DDFEB88917727C0100740D16 /* Supporting Files */,
 			);
 			path = T9Tests;
@@ -297,7 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDFEB89017727C0100740D16 /* T9Tests.m in Sources */,
+				DDFEB89017727C0100740D16 /* T9TreeNodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

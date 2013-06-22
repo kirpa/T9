@@ -39,12 +39,9 @@
 
 - (void) updateResultForDigits:(NSString *) digits
 {
-//    if ([digits length] > 0)
-    {
-        NSArray *words = [_dictionary wordsForDigits:digits];
-        NSLog(@"words are: %@", words);
-        self.outputLabel.text = [words componentsJoinedByString:@"\n"];
-    }
+    NSArray *words = [_dictionary wordsForDigits:digits];
+    NSLog(@"words are: %@", words);
+    self.outputLabel.text = [words componentsJoinedByString:@"\n"];
 }
 
 #pragma mark UITextFieldDelegate

@@ -102,6 +102,7 @@ static int instanceCount = 0;
 {
     NSLog(@"Wrong initializer for class: %@", [self class]);
     return nil;
+    
 }
 
 - (void) dealloc
